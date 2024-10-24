@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: peru;
+}
+.link {
+  color: blue;
+  font-weight: bold;
+}
+.text {
+  color: brown;
+}
