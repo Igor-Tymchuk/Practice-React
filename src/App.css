@@ -1,0 +1,6 @@
+@import "node_modules/modern-normalize/modern-normalize.css";
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
