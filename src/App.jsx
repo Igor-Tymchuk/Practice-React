@@ -22,19 +22,13 @@ import { useState } from "react";
 // }
 
 const App = () => {
-  const [switchBtn, setSwitchBtn] = useState(false);
-  const handleSwitch = () => {
-    setSwitchBtn(!switchBtn);
-    console.log(switchBtn);
-  };
-
   return (
     <>
       <Counter />
       <TextInput />
       <ToggleVisibility />
       <TodoList />
-      <ToggleGrid up={handleSwitch} />
+      <ToggleGrid />
     </>
   );
 };
