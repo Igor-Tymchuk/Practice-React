@@ -6,3 +6,81 @@
   padding: 2rem;
   text-align: center;
 }
+
+/* useStateTasks_Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f9;
+}
+
+/* Стили для всех заголовков */
+h1,
+h2,
+h3 {
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Стили для кнопок */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Стили для всех текстовых полей и input[type="range"] */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="range"] {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Стили для списков */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #e6e6e6;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Стили для параграфов, используемых для вывода значений */
+p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+div {
+  border: 1px solid lightgray;
+}
