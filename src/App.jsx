@@ -9,6 +9,7 @@ import ToggleVisibility from "./components/ToggleVisibility/ToggleVisibility";
 import TodoList from "./components/TodoList/TodoList";
 import ToggleGrid from "./components/ToggleGrid/ToggleGrid";
 import "./App.css";
+import { useState } from "react";
 
 // function App() {
 //   return (
@@ -21,13 +22,19 @@ import "./App.css";
 // }
 
 const App = () => {
+  const [switchBtn, setSwitchBtn] = useState(false);
+  const handleSwitch = () => {
+    setSwitchBtn(!switchBtn);
+    console.log(switchBtn);
+  };
+
   return (
     <>
       <Counter />
       <TextInput />
       <ToggleVisibility />
       <TodoList />
-      <ToggleGrid />
+      <ToggleGrid up={handleSwitch} />
     </>
   );
 };

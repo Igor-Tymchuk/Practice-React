@@ -1,4 +1,4 @@
-const ToggleGrid = () => {
+const ToggleGrid = ({ up }) => {
   return (
     <div
       style={{
@@ -7,15 +7,15 @@ const ToggleGrid = () => {
         gap: "10px",
       }}
     >
-      <button>Off</button>
-      <button>Off</button>
-      <button>Off</button>
-      <button>Off</button>
-      <button>Off</button>
-      <button>Off</button>
-      <button>Off</button>
-      <button>Off</button>
-      <button>Off</button>
+      <button onClick={() => up()}>{up ? "Off" : "On"}</button>
+      <button onClick={() => up()}>Off</button>
+      <button onClick={() => up()}>Off</button>
+      <button onClick={() => up()}>Off</button>
+      <button onClick={() => up()}>Off</button>
+      <button onClick={() => up()}>Off</button>
+      <button onClick={() => up()}>Off</button>
+      <button onClick={() => up()}>Off</button>
+      <button onClick={() => up()}>Off</button>
     </div>
   );
 };
