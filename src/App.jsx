@@ -9,7 +9,7 @@ import ToggleVisibility from "./components/ToggleVisibility/ToggleVisibility";
 import TodoList from "./components/TodoList/TodoList";
 import ToggleGrid from "./components/ToggleGrid/ToggleGrid";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // function App() {
 //   return (
@@ -22,10 +22,19 @@ import { useState } from "react";
 // }
 
 const App = () => {
+  const [input, setInput] = useState(localStorage.getItem("input") ?? "");
+  const handleInput = (event) => {
+    setInput(event.target.value);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("input", input);
+  }, [input]);
+
   return (
     <>
       <Counter />
-      <TextInput />
+      <TextInput value={input} handleInput={handleInput} />
       <ToggleVisibility />
       <TodoList />
       <ToggleGrid />
