@@ -31,9 +31,38 @@ const App = () => {
     localStorage.setItem("input", input);
   }, [input]);
 
+  const [counter, setCounter] = useState(0);
+
+  const handleCounterPlus = () => {
+    setCounter(counter + 1);
+  };
+  const handleCounterMinus = () => {
+    setCounter(counter - 1);
+  };
+  const handleCounterReset = () => {
+    setCounter(0);
+  };
+
+  useEffect(() => {
+    const setIntervalId = setInterval(() => {
+      setCounter((prev) => {
+        if (prev === 0) {
+          clearInterval(setIntervalId);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, 1000);
+    return () => clearInterval(setIntervalId);
+  }, [counter]);
   return (
     <>
-      <Counter />
+      <Counter
+        plus={handleCounterPlus}
+        minus={handleCounterMinus}
+        value={counter}
+        reset={handleCounterReset}
+      />
       <TextInput value={input} handleInput={handleInput} />
       <ToggleVisibility />
       <TodoList />
