@@ -1,9 +1,10 @@
-const Counter = () => {
+const Counter = ({ plus, minus, value, reset }) => {
   return (
     <div>
-      <h1>Counter: 0</h1>
-      <button>+</button>
-      <button>-</button>
+      <h1>Counter: {value}</h1>
+      <button onClick={plus}>+</button>
+      <button onClick={reset}>reset</button>
+      <button onClick={minus}>-</button>
     </div>
   );
 };
