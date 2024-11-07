@@ -10,6 +10,7 @@ import TodoList from "./components/TodoList/TodoList";
 import ToggleGrid from "./components/ToggleGrid/ToggleGrid";
 import "./App.css";
 import { useEffect, useState } from "react";
+import SubmitForm from "./components/SubmitForm/SubmitForm";
 
 // function App() {
 //   return (
@@ -22,42 +23,42 @@ import { useEffect, useState } from "react";
 // }
 
 const App = () => {
-  const [input, setInput] = useState(localStorage.getItem("input") ?? "");
-  const handleInput = (event) => {
-    setInput(event.target.value);
-  };
+  // const [input, setInput] = useState(localStorage.getItem("input") ?? "");
+  // const handleInput = (event) => {
+  //   setInput(event.target.value);
+  // };
 
-  useEffect(() => {
-    localStorage.setItem("input", input);
-  }, [input]);
+  // useEffect(() => {
+  //   localStorage.setItem("input", input);
+  // }, [input]);
 
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
 
-  const handleCounterPlus = () => {
-    setCounter(counter + 1);
-  };
-  const handleCounterMinus = () => {
-    setCounter(counter - 1);
-  };
-  const handleCounterReset = () => {
-    setCounter(0);
-  };
+  // const handleCounterPlus = () => {
+  //   setCounter(counter + 1);
+  // };
+  // const handleCounterMinus = () => {
+  //   setCounter(counter - 1);
+  // };
+  // const handleCounterReset = () => {
+  //   setCounter(0);
+  // };
 
-  useEffect(() => {
-    const setIntervalId = setInterval(() => {
-      setCounter((prev) => {
-        if (prev === 0) {
-          clearInterval(setIntervalId);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 1000);
-    return () => clearInterval(setIntervalId);
-  }, [counter]);
+  // useEffect(() => {
+  //   const setIntervalId = setInterval(() => {
+  //     setCounter((prev) => {
+  //       if (prev === 0) {
+  //         clearInterval(setIntervalId);
+  //         return prev;
+  //       }
+  //       return prev + 1;
+  //     });
+  //   }, 1000);
+  //   return () => clearInterval(setIntervalId);
+  // }, [counter]);
   return (
     <>
-      <Counter
+      {/* <Counter
         plus={handleCounterPlus}
         minus={handleCounterMinus}
         value={counter}
@@ -66,7 +67,8 @@ const App = () => {
       <TextInput value={input} handleInput={handleInput} />
       <ToggleVisibility />
       <TodoList />
-      <ToggleGrid />
+      <ToggleGrid /> */}
+      <SubmitForm />
     </>
   );
 };
