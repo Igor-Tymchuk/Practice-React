@@ -1,4 +1,4 @@
-export const movies = [
+export default [
   {
     id: 1,
     title: "Inception",
