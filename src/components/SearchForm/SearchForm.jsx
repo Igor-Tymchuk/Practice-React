@@ -1,15 +1,22 @@
 import { Field, Form, Formik } from "formik";
+import { useContext } from "react";
+import { yourContext } from "../../context/NewContext";
 
-const SearchForm = () => {
+const SearchForm = ({ handleQuery }) => {
+  const { artur, yourValue, toggleTheme } = useContext(yourContext);
   const handleSearch = (values, actions) => {
-    console.log(values);
+    const value = values;
     actions.resetForm();
+    handleQuery(value);
   };
   return (
     <div>
       <Formik initialValues={{ query: "" }} onSubmit={handleSearch}>
         <Form>
-          <Field name="query" placeholder="Search movie..." />
+          <button onClick={toggleTheme} type="button">
+            {yourValue.toString()}
+          </button>
+          <Field name="query" placeholder={artur} />
           <button type="submit">Search</button>
         </Form>
       </Formik>
