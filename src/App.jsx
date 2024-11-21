@@ -130,6 +130,7 @@ import { Route, Routes } from "react-router-dom";
 const Home = lazy(() => import("./components/Home/Home"));
 const About = lazy(() => import("./components/About/About"));
 const Contacts = lazy(() => import("./components/Contacts/Contacts"));
+const Blog = lazy(() => import("./components/Blog/Blog"));
 
 const App = () => {
   return (
@@ -140,6 +141,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/blog" element={<Blog />}>
+            <Route path=":id" element={<Blog />} />
+          </Route>
         </Routes>
       </Suspense>
     </>
