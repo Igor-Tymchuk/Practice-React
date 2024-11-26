@@ -9,9 +9,10 @@ import "modern-normalize";
 // import TodoList from "./components/TodoList/TodoList";
 // import ToggleGrid from "./components/ToggleGrid/ToggleGrid";
 import "./App.css";
-import { lazy, Suspense } from "react";
-import Navigation from "./components/Navigation/Navigation";
-import { Route, Routes } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
+// import { lazy, Suspense } from "react";
+// import Navigation from "./components/Navigation/Navigation";
+// import { Route, Routes } from "react-router-dom";
 // import { useContext, useEffect, useState } from "react";
 // import SubmitForm from "./components/SubmitForm/SubmitForm";
 // import SearchForm from "./components/SearchForm/SearchForm";
@@ -127,26 +128,36 @@ import { Route, Routes } from "react-router-dom";
 //   );
 // };
 
-const Home = lazy(() => import("./components/Home/Home"));
-const About = lazy(() => import("./components/About/About"));
-const Contacts = lazy(() => import("./components/Contacts/Contacts"));
-const Blog = lazy(() => import("./components/Blog/Blog"));
+// const Home = lazy(() => import("./components/Home/Home"));
+// const About = lazy(() => import("./components/About/About"));
+// const Contacts = lazy(() => import("./components/Contacts/Contacts"));
+// const Blog = lazy(() => import("./components/Blog/Blog"));
+
+// const App = () => {
+//   return (
+//     <>
+//       <Navigation />
+//       <Suspense fallback={<h2>☺☻♥</h2>}>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/about" element={<About />} />
+//           <Route path="/contacts" element={<Contacts />} />
+//           <Route path="/blog" element={<Blog />}>
+//             <Route path=":id" element={<Blog />} />
+//           </Route>
+//         </Routes>
+//       </Suspense>
+//     </>
+//   );
+// };
+
+// export default App;
 
 const App = () => {
   return (
-    <>
-      <Navigation />
-      <Suspense fallback={<h2>☺☻♥</h2>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/blog" element={<Blog />}>
-            <Route path=":id" element={<Blog />} />
-          </Route>
-        </Routes>
-      </Suspense>
-    </>
+    <div>
+      <Cart />
+    </div>
   );
 };
 
