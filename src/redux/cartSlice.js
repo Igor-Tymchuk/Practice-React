@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { deleteData, fetchData, addData } from "./operations";
 
 const slice = createSlice({
   name: "goods",
@@ -24,6 +25,21 @@ const slice = createSlice({
         return (acc += item.price * item.quantity);
       }, 0);
     },
+  },
+
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchData.fulfilled, (state, action) => {
+        state.goods = action.payload;
+      })
+      .addCase(deleteData.fulfilled, (state, action) => {
+        state.goods = state.goods.filter(
+          (product) => product.id !== action.payload.id
+        );
+      })
+      .addCase(addData.fulfilled, (state, action) => {
+        state.goods.push(action.payload);
+      });
   },
 });
 

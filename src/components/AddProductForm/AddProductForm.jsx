@@ -1,6 +1,5 @@
-import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../redux/cartSlice";
+import { addData } from "../../redux/operations";
 
 const AddProductForm = () => {
   const dispatch = useDispatch();
@@ -11,7 +10,7 @@ const AddProductForm = () => {
     const name = form.elements.name.value;
     const price = Number(form.elements.price.value);
     const quantity = Number(form.elements.quantity.value);
-    dispatch(addItem({ id: nanoid(), name, price, quantity }));
+    dispatch(addData({ name, price, quantity }));
     form.reset();
   };
 

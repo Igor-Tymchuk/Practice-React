@@ -2,16 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   changeAmountPlus,
   changeAmountMinus,
-  deleteItem,
   goodsItems,
 } from "../../redux/cartSlice";
+import { fetchData, deleteData } from "../../redux/operations";
+import { useEffect } from "react";
 
 const CartItemList = () => {
   const dispatch = useDispatch();
   const products = useSelector(goodsItems);
 
   const handleDelete = (id) => {
-    dispatch(deleteItem(id));
+    dispatch(deleteData(id));
   };
 
   const handlePlus = (id) => {
@@ -22,6 +23,10 @@ const CartItemList = () => {
     dispatch(changeAmountMinus(id));
   };
 
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
+
   return (
     <ul>
       {products.map(({ id, name, price, quantity }) => (
@@ -29,7 +34,7 @@ const CartItemList = () => {
           <span>{name}</span>
           <span>Цена: {price}</span>
           <span>Количество: {quantity}</span>
-          <button disabled={quantity >= 5} onClick={() => handlePlus(id)}>
+          <button disabled={quantity >= 100} onClick={() => handlePlus(id)}>
             Увеличить
           </button>
           <button disabled={quantity <= 0} onClick={() => handleMinus(id)}>
